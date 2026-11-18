@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão DOM: Painel de Controle</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <script src="Js/script.js" defer></script>
+</head>
+<body>
+    <div class="painel">
+        <!-- Barra de Progresso Geral -->
+        <div class="painel-progresso">
+            <div class="info-progresso">
+                <span>Status Operacional da Nave:</span>
+                <span id="texto-progresso">0%</span>
+            </div>
+            <div class="barra-fundo">
+                <div id="barra-preenchimento"></div>
+            </div>
+        </div>
+        <h1>🚀 Sistema de Navegação Padrão</h1>
+        
+        <!-- Etapa 1: Clicks e Classes CSS -->
+        <section class="modulo" id="modulo-energia">
+            <h2>1. Energia Principal</h2>
+            <p>O sistema está operando em energia reduzida.</p>
+            <button id="btn-energia">Restaurar Energia</button>
+        </section>
+
+        <!-- Etapa 2: Eventos de Mouse -->
+        <section class="modulo" id="modulo-radar">
+            <h2>2. Calibração de Radar</h2>
+            <p>Passe o mouse na área abaixo para mapear as coordenadas:</p>
+            <div id="area-rastreio">Área de Rastreio</div>
+            <p>Coordenadas: X: <span id="coord-x">0</span> | Y: <span id="coord-y">0</span></p>
+        </section>
+
+        <!-- Etapa 3: Manipulação de Atributos HTML -->
+        <section class="modulo" id="modulo-escudos">
+            <h2>3. Configuração de Escudos</h2>
+            <p>Mude o nível de alerta do escudo clicando nos botões:</p>
+            <img id="img-escudo" src="https://placehold.co/150x150/gray/white?text=Desativado" alt="Escudo Desativado">
+            <br><br>
+            <button class="btn-alerta" data-cor="blue" data-status="Alerta Azul">Azul</button>
+            <button class="btn-alerta" data-cor="red" data-status="Alerta Vermelho">Vermelho</button>
+        </section>
+
+        <!-- Etapa 4: Criação de Elementos (Lista de Tarefas) -->
+        <section class="modulo" id="modulo-checklist">
+            <h2>4. Checklist Pré-Voo</h2>
+            <div class="input-group">
+                <input type="text" id="input-tarefa" placeholder="Nova verificação...">
+                <button id="btn-add-tarefa">Adicionar</button>
+            </div>
+            <ul id="lista-tarefas">
+                <!-- As tarefas entrarão aqui via JS -->
+            </ul>
+        </section>
+        <!-- Etapa 5: Eventos de Teclado (Keyup) -->
+        <section class="modulo" id="modulo-comunicacao">
+            <h2>5. Comunicação Intergaláctica</h2>
+            <p>O rádio está quebrado. Digite a mensagem de emergência para transmiti-la no visor principal:</p>
+            <input type="text" id="input-mensagem" placeholder="Câmbio, digite aqui...">
+            <div id="visor-transmissao" class="tela-escura">
+                Aguardando sinal...
+            </div>
+        </section>
+
+        <!-- Etapa 6: Evento Change (Select) e Estilos -->
+        <section class="modulo" id="modulo-navegacao">
+            <h2>6. Destino de Dobra Espacial</h2>
+            <p>Selecione o planeta destino para ajustar as cores da cabine:</p>
+            <select id="select-destino">
+                <option value="#1a1a2e">Espaço Profundo (Padrão)</option>
+                <option value="#3e1b14">Marte (Vermelho)</option>
+                <option value="#102e3b">Netuno (Azul Gelo)</option>
+                <option value="#2a3b10">Nebulosa Tóxica (Verde)</option>
+            </select>
+        </section>
+
+        <!-- Etapa 7: Validação Simples (If/Else) -->
+        <section class="modulo" id="modulo-seguranca">
+            <h2>7. Autenticação do Comandante</h2>
+            <p>Insira a credencial do comandante para liberar os controles manuais:</p>
+            <input type="password" id="input-senha" placeholder="Senha de comando">
+            <button id="btn-autenticar">Verificar Acesso</button>
+            <p id="msg-acesso" class="status-neutro">Acesso Bloqueado</p>
+        </section>
+
+        <!-- Etapa 8: Temporizadores (setInterval e clearInterval) -->
+        <section class="modulo" id="modulo-motor">
+            <h2>8. Resfriamento do Motor (Perigo!)</h2>
+            <p>O motor está superaquecendo! Inicie o resfriamento antes que chegue a 100 graus.</p>
+            <h3 id="display-temperatura">Temperatura: <span id="valor-temp">20</span>°C</h3>
+            <button id="btn-aquecer" style="background-color: #ff9800;">Simular Falha</button>
+            <button id="btn-resfriar" style="background-color: #2196F3;" disabled>Ativar Resfriamento (Emergência)</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

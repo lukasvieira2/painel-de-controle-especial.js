@@ -1,0 +1,151 @@
+body {
+    background-color: #1a1a2e;
+    color: #a9a9b3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.5s, color 0.5s;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Classe que será ativada via JS na Etapa 1 */
+body.energia-restaurada {
+    background-color: #e0e0e0;
+    color: #111;
+}
+
+.painel {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 40px;
+    border-radius: 10px;
+    border: 2px solid #16213e;
+}
+
+.modulo {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #0f3460;
+}
+
+button{
+    background-color: #e94560;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#area-rastreio {
+    width: 100%;
+    height: 100px;
+    background-color: #0f3460;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: crosshair;
+    color: white;
+}
+
+#lista-tarefas {
+    list-style-type: none;
+    padding: 0;
+}
+
+#lista-tarefas li {
+    background: #0f3460;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Classe para marcar tarefa concluída */
+.concluida {
+    text-decoration: line-through;
+    opacity: 0.5;
+    background: #4caf50 !important;
+}
+
+
+/* Estilos para Comunicação */
+.tela-escura {
+    background-color: #0b0c10;
+    color: #45f3ff;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #45f3ff;
+    min-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Estilos para Segurança */
+.status-neutro { color: #a9a9b3; font-weight: bold; }
+.status-sucesso { color: #4caf50; font-weight: bold; text-shadow: 0 0 5px #4caf50; }
+.status-erro { color: #f44336; font-weight: bold; text-shadow: 0 0 5px #f44336; }
+
+/* Estilo para Perigo do Motor */
+.perigo-critico {
+    color: #f44336;
+    animation: piscar 0.5s infinite;
+}
+
+@keyframes piscar {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+
+/* Gamificação: Barra de Progresso */
+.painel-progresso {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #45f3ff;
+    box-shadow: 0 0 10px rgba(69, 243, 255, 0.2);
+}
+
+.info-progresso {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #45f3ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.barra-fundo {
+    width: 100%;
+    height: 20px;
+    background-color: #1a1a2e;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #2a2a4a;
+}
+
+#barra-preenchimento {
+    width: 0%;
+    height: 100%;
+    background-color: #4caf50;
+    box-shadow: 0 0 15px #4caf50;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Animação suave de enchimento */
+}
